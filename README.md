@@ -1,13 +1,14 @@
-# Fake Shop
+principais comandos 
+docker build -t fernando8312/fake-shop-desafio:v1 kubectl apply -f k8s/deployment.yaml kubectl get all
 
+PUBLICANDO: docker container ls docker push fernando8312/fake-shop-desafio:v1
 
-## Variável de Ambiente
-DB_HOST	=> Host do banco de dados PostgreSQL.
+kubectl rollout history deployment fakeshop kubectl rollout undo deployment fakeshop && watch ‘kubectl get po’
 
-DB_USER => Nome do usuário do banco de dados PostgreSQL.
+DELETANDO POD E RECRIANDO
+kubectl get pod 
 
-DB_PASSWORD	=> Senha do usuário do banco de dados PostgreSQL.
+kubectl delete pod/fakeshop-bf5c75c95-p4p4n
 
-DB_NAME	=>	Nome do banco de dados PostgreSQL.
-
-DB_PORT	=>	Porta de conexão com o banco de dados PostgreSQL.
+PARA VER A DISTRIBUIÇÃO NOS PODS
+kubectl get pod -o wide
